@@ -28,8 +28,8 @@
     background: linear-gradient(
         to right,
         transparent,
-        rgba(216, 59, 59, 0.884) 20%,
-        rgba(216, 59, 59, 0.884) 80%,
+        var(--accent-red-opacity) 20%,
+        var(--accent-red-opacity) 80%,
         transparent
     );
 }
@@ -74,16 +74,15 @@
     right: -300px;
     width: 300px;
     height: 60%;
-    background: rgba(26, 26, 26, 0.95);
+    background: var(--background-dark-opacity-95);
     transition: all 0.4s ease;
     padding-top: 30px;
     border-bottom-left-radius: 15px;
     border-left: 3px solid transparent;
     border-bottom: 3px solid transparent;
-    /* Ajout du dégradé pour les bordures */
     border-image: linear-gradient(
             to bottom right,
-            rgba(216, 59, 59, 0.884),
+            var(--accent-red-opacity),
             transparent
         )
         1;
@@ -111,7 +110,7 @@
 .nav-menu li a {
     display: block;
     padding: 15px 30px;
-    color: #fff;
+    color: var(--text-white);
     text-decoration: none;
     font-size: 1.2rem;
     border-left: 3px solid transparent;
@@ -121,7 +120,7 @@
 
 .nav-menu li a:hover {
     background: rgba(216, 59, 59, 0.2);
-    border-left: 3px solid rgba(216, 59, 59, 0.884);
+    border-left: 3px solid var(--accent-red-opacity);
 }
 
 .nav-menu li:nth-child(1) {
@@ -138,8 +137,8 @@
     width: 70px;
     margin-left: 10px;
 }
-@media screen and (max-width:499px) {
-    .header-container-lg{
+@media screen and (max-width: 499px) {
+    .header-container-lg {
         display: none;
     }
 }
@@ -153,18 +152,17 @@
         align-items: center;
         justify-content: center;
         gap: 15%;
-        margin-top: -5%;
+        margin-top: -3%;
         margin-left: 15%;
     }
     .nav-menu-lg-lnk {
-        color: #fff;
+        color: var(--text-white);
         font-family: Koho;
         text-decoration: none;
         display: flex;
-
     }
-    .nav-menu-lg-lnk:hover{
-        color: rgba(223, 84, 84, 0.774);
+    .nav-menu-lg-lnk:hover .init {
+        color: var(--accent-red-opacity);
         transform: scale(1.2);
         transition: transform 0.7s ease-in-out;
     }

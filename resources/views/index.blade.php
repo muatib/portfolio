@@ -28,16 +28,27 @@
 
 <img src="{{ asset('img/sabre.png') }}" alt="katana decoration" class="sabre-decoration">
 
+<h2 class="pres-ttl skills-ttl" id="skillsTitle">Compétences martiales</h2>
 <section class="skills-container">
-<section class="skills-container">
-    <h2 class="pres-ttl animated-title" id="skillsTitle">Compétences martiales</h2>
     <div class="skills-icon-container">
-        <img style="--i: 0" class="skills-icon-stack" src="{{ asset('img/stack.png') }}" alt="stack technique">
-        <img style="--i: 1" class="skills-icon lara" src="{{ asset('img/laravel.png') }}" alt="laravel">
-        <img style="--i: 2" class="skills-icon sass" src="{{ asset('img/SCSS.png') }}" alt="style">
-        <img style="--i: 3" class="skills-icon" src="{{ asset('img/php.png') }}" alt="php">
-        <img style="--i: 4" class="skills-icon" src="{{ asset('img/wordpress.png') }}" alt="wordpress">
-        <img style="--i: 5" class="skills-icon" src="{{ asset('img/figma.png') }}" alt="figma">
+        <div class="icon-wrapper">
+            <img style="--i: 0" class="skills-icon-stack" src="{{ asset('img/stack.png') }}" alt="stack technique">
+        </div>
+        <div class="icon-wrapper">
+            <img style="--i: 1" class="skills-icon" src="{{ asset('img/laravel.png') }}" alt="laravel">
+        </div>
+        <div class="icon-wrapper">
+            <img style="--i: 2" class="skills-icon" src="{{ asset('img/SCSS.png') }}" alt="style">
+        </div>
+        <div class="icon-wrapper">
+            <img style="--i: 3" class="skills-icon" src="{{ asset('img/php.png') }}" alt="php">
+        </div>
+        <div class="icon-wrapper">
+            <img style="--i: 4" class="skills-icon" src="{{ asset('img/wordpress.png') }}" alt="wordpress">
+        </div>
+        <div class="icon-wrapper">
+            <img style="--i: 5" class="skills-icon" src="{{ asset('img/figma.png') }}" alt="figma">
+        </div>
         <p class="skill-txt">et plus encore</p>
     </div>
 </section>

@@ -3,18 +3,18 @@
     width: 90%;
     margin: 40px auto;
     padding: 30px;
-    background: rgba(26, 26, 26, 0.6);
+    background: var(--background-dark-opacity-60);
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.692);
+    box-shadow: 0 0 20px var(--shadow-red);
     transition: box-shadow 0.3s ease;
 }
 .contact-container:hover {
-    box-shadow: 0 0 20px rgba(228, 161, 38, 0.726);
+    box-shadow: 0 0 20px var(--accent-orange);
 }
 .contact-ttl {
-    color: white;
+    color: var(--text-white);
     font-family: "Koho", sans-serif;
-    text-shadow: 1px 1px 0 #e9572a;
+    text-shadow: 1px 1px 0 var(--accent-red);
     text-align: center;
     margin-bottom: 30px;
     font-size: 2rem;
@@ -32,7 +32,7 @@
 }
 
 .form-group label {
-    color: white;
+    color: var(--text-white);
     font-family: "Koho", sans-serif;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -41,10 +41,10 @@
 .form-group input,
 .form-group textarea {
     padding: 10px 15px;
-    background: rgba(26, 26, 26, 0.8);
-    border: 1px solid rgba(255, 107, 107, 0.3);
+    background: var(--background-dark-opacity-80);
+    border: 1px solid var(--shadow-red-light);
     border-radius: 5px;
-    color: white;
+    color: var(--text-white);
     font-family: "Koho", sans-serif;
     transition: all 0.3s ease;
 }
@@ -53,7 +53,7 @@
 .form-group textarea:focus {
     outline: none;
     border-color: #ff6b6b;
-    box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 0 10px var(--shadow-red-light);
 }
 
 .form-group textarea {
@@ -68,8 +68,8 @@
     width: 150px;
     height: 40px;
     border-radius: 50px;
-    background: rgba(26, 26, 26, 0.6);
-    color: white;
+    background: var(--background-dark-opacity-60);
+    color: var(--text-white);
     font-family: "Koho", sans-serif;
     font-size: 1rem;
     cursor: pointer;
@@ -87,7 +87,7 @@
     right: -2px;
     bottom: -2px;
     border-radius: 50px;
-    background: linear-gradient(45deg, #ff6b6b, #ffd93d, #ff4757, #ff6b6b);
+    background: linear-gradient(45deg, var(--gradient-colors));
     background-size: 300% 300%;
     z-index: -1;
     animation: gradientMove 5s ease infinite;
@@ -100,14 +100,14 @@
     left: 1px;
     right: 1px;
     bottom: 1px;
-    background: rgba(26, 26, 26, 0.8);
+    background: var(--background-dark-opacity-80);
     border-radius: 50px;
     z-index: -1;
 }
 
 .submit-btn:hover {
-    background: rgba(233, 87, 42, 0.2);
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+    background: var(--accent-red-light-opacity);
+    box-shadow: 0 0 20px var(--shadow-red-light);
     transform: translateY(-5px);
 }
 
@@ -122,11 +122,11 @@
 }
 
 .success {
-    background-color: rgba(40, 167, 69, 0.8);
+    background-color: var(--success-color);
 }
 
 .error {
-    background-color: rgba(220, 53, 69, 0.8);
+    background-color: var(--error-color);
 }
 .button-img {
     width: 90px;
