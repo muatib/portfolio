@@ -4,6 +4,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
+
 }
 :root{
     @font-face {
@@ -19,7 +20,7 @@ body {
     --accent-red: #e9572a;
     --accent-red-opacity: rgba(216, 59, 59, 0.884);
     --accent-red-light-opacity: rgba(233, 87, 42, 0.2);
-    --accent-orange: rgba(228, 161, 38, 0.726);
+    --accent-orange: rgba(228, 134, 26, 0.726);
     --shadow-red: rgba(255, 107, 107, 0.637);
     --shadow-red-light: rgba(255, 107, 107, 0.3);
     --gradient-colors: #ff6b6b, #ffd93d, #ff4757, #ff6b6b;

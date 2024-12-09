@@ -7,12 +7,16 @@ use Illuminate\Support\Facades\Mail;
 use ReCaptcha\ReCaptcha;
 
 Route::get('/', function () {
-    return view('index');
+    return view('home');
 })->name('home');
 
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/projects', function () {
+    return view('projects');
+})->name('projects');
 
 Route::post('/contact-submit', function (Request $request, ReCaptcha $recaptcha) {
     // Vérification du captcha

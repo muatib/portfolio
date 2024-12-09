@@ -1,21 +1,23 @@
 /* Header et Menu */
 .header-container {
     height: 80px;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #1a1a1a;
+    gap: 50%;
 }
 .header-container-lg {
-    height: 80px;
-    position: sticky;
+    height: 100px;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
-    background-color: #1a1a1a;
+    background-color: #1a1a1ad5;
 }
 .header-container::after,
 .header-container-lg::after {
@@ -40,13 +42,13 @@
     height: 50px;
     position: relative;
     cursor: pointer;
-    margin-left: 60%;
+    margin-left: 15%;
 }
 .temple {
-    width: 50px;
+    width: 40px;
 }
 .swords {
-    width: 60px;
+    width: 50px;
 }
 .menu-burger img {
     position: absolute;
@@ -67,7 +69,6 @@
     transform: rotate(0);
 }
 
-/* Navigation Menu */
 .nav-menu {
     position: fixed;
     top: 80px;
@@ -118,24 +119,9 @@
     font-family: Koho;
 }
 
-.nav-menu li a:hover {
-    background: rgba(216, 59, 59, 0.2);
-    border-left: 3px solid var(--accent-red-opacity);
-}
-
-.nav-menu li:nth-child(1) {
-    transition-delay: 0.1s;
-}
-.nav-menu li:nth-child(2) {
-    transition-delay: 0.2s;
-}
-.nav-menu li:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
 .init {
-    width: 70px;
-    margin-left: 10px;
+    width: 50px;
+    margin-left: 20%;
 }
 @media screen and (max-width: 499px) {
     .header-container-lg {
@@ -146,24 +132,48 @@
     .header-container {
         display: none;
     }
+    .header-container-lg {
+        display: block;
+    }
     .nav-menu-lg-itm {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 15%;
-        margin-top: -3%;
-        margin-left: 15%;
+        gap: 10%;
+        margin-top: 2%;
+        margin-left: 45%;
+        font-size: 1.5rem;
     }
     .nav-menu-lg-lnk {
         color: var(--text-white);
         font-family: Koho;
         text-decoration: none;
         display: flex;
+        transition: all 1s ease;
     }
-    .nav-menu-lg-lnk:hover .init {
+    .nav-menu-lg-lnk:hover {
         color: var(--accent-red-opacity);
         transform: scale(1.2);
-        transition: transform 0.7s ease-in-out;
+        transition: transform 0.9s ease-in-out;
+    }
+
+    .init {
+        width: 7%;
+        margin-left: 2%;
+        margin-top: 2%;
+
+        position: fixed;
+    }
+    .init:hover {
+        transform: scale(1.2);
+        transition: transform 1s ease-in-out;
+    }
+
+    /* Créons un conteneur pour l'image si nécessaire */
+    .nav-menu-lg-lnk:first-child {
+        position: relative;
+        display: flex;
+        align-items: center;
     }
 }
