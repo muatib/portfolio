@@ -11,9 +11,9 @@
     <div class="logo-container">
         <img class="logo" src="{{ asset('img/logo.png') }}" alt="logo">
     </div>
-
+<h1 class="main-ttl">Développeur Web à Caen</h1>
     <section class="pres-container">
-        <h1 class="pres-ttl ttl" id="presTitle">Artisan du digital</h1>
+        <h2 class="pres-ttl ttl" id="presTitle">Artisan du digital</h2>
         <div class="intro-txt">
             <p>Dans l'obscurité du web comme dans l'art du sabre, chaque ligne de code est un geste précis, chaque
                 fonction une technique maîtrisée.</p>
@@ -34,19 +34,24 @@
 
     <h2 class="pres-ttl" id="skillsTitle">Compétences martiales</h2>
 
-
-
-        @include('components.skills')
+    @include('components.skills')
 
 
     <img src="{{ asset('img/sabre.png') }}" alt="katana decoration" class="sabre-decoration">
 
-
-
     <section id="portfolio" class="projects-section">
         <h2 class="pres-ttl" id="projectsTitle">Territoires conquis</h2>
         @include('components.projects')
+
     </section>
+
+    <img src="{{ asset('img/sabre.png') }}" alt="katana decoration" class="sabre-decoration">
+
+    <section id="contact" class="contact-section">
+        @include('components.contact')
+
+    </section>
+
 
 
 @endsection

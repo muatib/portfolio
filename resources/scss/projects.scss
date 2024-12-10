@@ -1,10 +1,11 @@
+/* Base Projects Container Styles */
 .projects-container {
     width: 100%;
     position: relative;
-    /* Assure que le conteneur prend toute la largeur disponible */
     overflow: hidden;
 }
 
+/* Project Card Title Styles */
 .project-card-ttl {
     color: var(--text-white);
     text-transform: uppercase;
@@ -13,11 +14,13 @@
     margin: 15px;
 }
 
+/* Project Card Text Styles */
 .project-card-txt {
     color: var(--text-white);
     font-family: Koho;
 }
 
+/* Slider Base Styles */
 .slider {
     display: grid;
     grid-auto-flow: column;
@@ -31,10 +34,12 @@
     padding: 20px 0;
 }
 
+/* Hide Scrollbar */
 .slider::-webkit-scrollbar {
     display: none;
 }
 
+/* Project Card Base Styles */
 .project-card {
     margin: 0 auto;
     width: calc(100% - 40px);
@@ -47,21 +52,25 @@
     overflow: hidden;
 }
 
+/* Card Spacing */
 .project-card + .project-card {
     margin-left: 20px;
 }
 
+/* Card Image Styles */
 .project-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
+/* Card Content Styles */
 .card-content {
     padding: 20px;
     text-align: center;
 }
 
+/* Technology Stack Styles */
 .tech-stack {
     display: flex;
     justify-content: center;
@@ -74,6 +83,7 @@
     height: 40px;
 }
 
+/* Navigation Button Styles */
 .prev,
 .next {
     position: absolute;
@@ -94,15 +104,134 @@
 .next {
     right: 20px;
 }
+@media screen and (min-width: 768px) and (max-width: 834px) {
+    .projects-container {
+        display: block;
+        margin: 30px auto;
+        padding: 0 30px;
+        max-width: 90%;
+    }
 
+    .slider {
+        grid-auto-columns: 65%;
+        gap: 3%;
+        padding: 20px 0;
+        justify-content: start;
+        margin: 0 auto;
+    }
+
+    .project-card {
+        width: 100%;
+        min-width: 280px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .project-card img {
+        height: 160px;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .project-card-ttl {
+        font-size: 1.3rem;
+        margin: 10px;
+    }
+
+    .tech-stack {
+        gap: 12px;
+        margin: 15px 0;
+    }
+
+    .tech-stack img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .prev,
+    .next {
+        display: none;
+        ;
+    }
+
+
+}
+/* Mobile Styles (up to 499px) */
 @media (max-width: 499px) {
     .prev,
     .next {
         display: none;
     }
+
+    .slider {
+        grid-auto-columns: 100%;
+        padding: 20px 0;
+    }
+
+    .project-card {
+        width: calc(100% - 40px);
+    }
 }
 
-@media screen and (min-width: 500px) {
+/* Tablet Styles (500px to 1023px) */
+@media screen and (min-width: 500px) and (max-width: 1023px) {
+    .projects-container {
+        display: block;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+
+    .slider {
+        grid-auto-columns: 45%;
+        gap: 2%;
+        padding: 20px 0;
+        justify-content: start;
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 0;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 1s ease-in-out, transform 1.2s ease-in-out;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    .tech-stack {
+        gap: 15px;
+        margin: 15px 0;
+    }
+
+    .tech-stack img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .project-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .prev,
+    .next {
+        display: none;
+
+    }
+
+
+}
+
+/* Desktop Styles (1024px and above) */
+@media screen and (min-width: 1024px) {
     .projects-container {
         display: block;
         margin: 40px 0 auto;
@@ -112,14 +241,14 @@
         width: 80%;
         flex: 0 0 20%;
         margin: 0;
-
-
     }
+
     .project-card.visible:hover {
         transform: translateY(-10px);
         box-shadow: 0 0 20px var(--accent-orange);
         transition: all 0.3s ease-out;
     }
+
     .project-card {
         opacity: 0;
         transform: translateY(50px);
@@ -130,6 +259,8 @@
         opacity: 1;
         transform: translateY(0);
     }
+
+    /* Card Animation Delays */
     .project-card:nth-child(1) {
         transition-delay: 0s;
     }

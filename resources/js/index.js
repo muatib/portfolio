@@ -1,59 +1,95 @@
-document.querySelector(".menu-burger").addEventListener("click", function () {
-    this.classList.toggle("active");
-    document.querySelector(".nav-menu").classList.toggle("active");
-});
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach((entry) => {
-//             if (entry.isIntersecting) {
-//                 entry.target.classList.add("visible");
-//             }
-//         });
-//     });
+/**
+ * Handles the burger menu functionality
+ * @param {HTMLElement} menuBurger - The burger menu button element
+ * @param {HTMLElement} navMenu - The navigation menu element
+ */
+function initializeBurgerMenu(menuBurger, navMenu) {
+    const menuLinks = document.querySelectorAll('.nav-menu a');
 
-//     const skillsContainer = document.querySelector(".skills-icon-container");
-//     if (skillsContainer) observer.observe(skillsContainer);
+    // Toggle menu on burger click
+    menuBurger.addEventListener('click', () => {
+        menuBurger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
 
-// });
-document.addEventListener('DOMContentLoaded', function () {
-    // Fonction pour animer les lettres
-    function animateLetters(element) {
-        const text = element.textContent;
-        element.textContent = ''; // Efface le texte initial
+    // Close menu when clicking links
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => closeMenu(menuBurger, navMenu));
+    });
 
-        [...text].forEach((char, index) => {
-            const span = document.createElement('span');
-            span.textContent = char;
-            span.classList.add('letter');
-            span.style.animationDelay = `${index * 0.08}s`; // Ajout d'un délai pour chaque lettre
-            element.appendChild(span);
-        });
-    }
+    // Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!menuBurger.contains(event.target) && !navMenu.contains(event.target)) {
+            closeMenu(menuBurger, navMenu);
+        }
+    });
+}
 
-    // Initialiser Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
+/**
+ * Closes the navigation menu
+ * @param {HTMLElement} menuBurger - The burger menu button element
+ * @param {HTMLElement} navMenu - The navigation menu element
+ */
+function closeMenu(menuBurger, navMenu) {
+    menuBurger.classList.remove('active');
+    navMenu.classList.remove('active');
+}
+
+/**
+ * Animates individual letters in a text element
+ * @param {HTMLElement} element - The element containing text to animate
+ */
+function animateLetters(element) {
+    const text = element.textContent;
+    element.textContent = '';
+
+    [...text].forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.classList.add('letter');
+        span.style.animationDelay = `${index * 0.08}s`;
+        element.appendChild(span);
+    });
+}
+
+/**
+ * Creates and initializes an Intersection Observer for animations
+ * @param {Function} animateLetters - The letter animation function
+ * @returns {IntersectionObserver} The configured observer
+ */
+function createAnimationObserver(animateLetters) {
+    return new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Ajoute la classe `visible` lorsque l'élément est visible
                 entry.target.classList.add('visible');
 
-                // Si c'est le titre des skills, animer les lettres
                 if (entry.target.id === 'skillsTitle') {
                     animateLetters(entry.target);
                 }
 
-                // Déconnecter l'observation pour éviter des répétitions inutiles
-                observer.unobserve(entry.target);
+                entry.observer.unobserve(entry.target);
             }
         });
     });
+}
 
-    // Observer les éléments nécessaires
+// Main initialization
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize burger menu
+    const menuBurger = document.querySelector('.menu-burger');
+    const navMenu = document.querySelector('.nav-menu');
+    if (menuBurger && navMenu) {
+        initializeBurgerMenu(menuBurger, navMenu);
+    }
+
+    // Initialize animations
     const skillsTitle = document.querySelector('#skillsTitle');
     const skillsContainer = document.querySelector('.skills-icon-container');
 
-    if (skillsTitle) observer.observe(skillsTitle);
-    if (skillsContainer) observer.observe(skillsContainer);
+    if (skillsTitle || skillsContainer) {
+        const observer = createAnimationObserver(animateLetters);
+        if (skillsTitle) observer.observe(skillsTitle);
+        if (skillsContainer) observer.observe(skillsContainer);
+    }
 });
-

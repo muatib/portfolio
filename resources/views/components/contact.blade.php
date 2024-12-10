@@ -1,19 +1,15 @@
-@extends('layouts.app')
 
-@section('title', 'Contact')
 
-@section('content')
+
     <div class="background-container">
         <img src="{{ asset('img/background.jpg') }}" alt="background" class="background-image">
         <div class="gradient-overlay"></div>
     </div>
 
-    <div class="logo-container">
-        <img class="logo" src="{{ asset('img/logo.png') }}" alt="logo">
-    </div>
+    <h2 class="contact-ttl">Contact</h2>
 
     <section class="contact-container">
-        <h2 class="contact-ttl">Contact</h2>
+
 
         @if (session('success'))
             <div class="alert success">
@@ -64,5 +60,5 @@
         </form>
     </section>
 
-    <img src="{{ asset('img/sabre.png') }}" alt="katana decoration" class="sabre-decoration sabre">
-@endsection
+
+
