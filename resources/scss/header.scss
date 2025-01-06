@@ -159,14 +159,14 @@
     }
 
     .init {
-        width: 7%;
+        width: 6%;
         margin-left: 2%;
-        margin-top: 2%;
+        margin-top: 3%;
 
         position: fixed;
     }
     .init:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
         transition: transform 1s ease-in-out;
     }
 

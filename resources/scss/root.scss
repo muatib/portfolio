@@ -27,12 +27,155 @@ body {
     --success-color: rgba(40, 167, 69, 0.8);
     --error-color: rgba(220, 53, 69, 0.8);
 }
+[data-theme="cyber"] {
+    /* Thème Cyberpunk */
+    --background-dark: #0a0b1e;
+    --background-dark-opacity-60: rgba(10, 11, 30, 0.6);
+    --background-dark-opacity-80: rgba(10, 11, 30, 0.8);
+    --background-dark-opacity-90: rgba(10, 11, 30, 0.9);
+    --background-dark-opacity-95: rgba(10, 11, 30, 0.95);
+    --text-white: #00ff41;
+    --accent-red: #00ffff;
+    --accent-red-opacity: rgba(0, 255, 255, 0.884);
+    --accent-red-light-opacity: rgba(0, 255, 255, 0.2);
+    --accent-orange: rgba(255, 0, 255, 0.726);
+    --shadow-red: rgba(0, 255, 255, 0.637);
+    --shadow-red-light: rgba(0, 255, 255, 0.3);
+    --gradient-colors: #00ffff, #ff00ff, #00ff41, #00ffff;
+    --success-color: rgba(0, 255, 65, 0.8);
+    --error-color: rgba(255, 0, 98, 0.8);
+}
 
+/* Styles spécifiques au thème Cyberpunk */
+[data-theme="cyber"] .project-card,
+[data-theme="cyber"] .pricing-card {
+    border: 1px solid var(--accent-red);
+    box-shadow: 0 0 20px var(--shadow-red), inset 0 0 10px var(--shadow-red);
+    backdrop-filter: blur(5px);
+}
 
+[data-theme="cyber"] .main-ttl,
+[data-theme="cyber"] .pres-ttl {
+    text-shadow: 0 0 10px var(--text-white);
+    letter-spacing: 2px;
+}
+
+[data-theme="cyber"] .pres-btn {
+    border: 2px solid var(--accent-red);
+    box-shadow: 0 0 10px var(--shadow-red);
+    text-shadow: 0 0 5px var(--text-white);
+}
+
+[data-theme="cyber"] .background-image {
+    filter: hue-rotate(180deg) saturate(150%);
+}
+.theme-switcher {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.theme-checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.theme-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 8px;
+    background: var(--background-dark-opacity-80);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-right: 1px solid var(--accent-red);
+    border-top: 1px solid var(--accent-red);
+    border-bottom: 1px solid var(--accent-red);
+    box-shadow: 2px 0 10px var(--shadow-red-light);
+    transition: all 0.3s ease;
+    gap: 10px;
+}
+.theme-icon {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    filter: grayscale(0.5);
+    transition: all 0.3s ease;
+}
+
+.theme-arrow {
+    color: var(--accent-red);
+    font-size: 1rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.theme-label:hover .theme-icon {
+    filter: grayscale(0);
+    transform: rotate(180deg);
+}
+
+.theme-label:hover .theme-arrow {
+    opacity: 1;
+    transform: scale(1.2);
+}
+.theme-name {
+    color: var(--text-white);
+    font-family: Koho;
+    font-size: 0.8rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.theme-checkbox:checked + .theme-label .theme-name:first-child,
+.theme-checkbox:not(:checked) + .theme-label .theme-name:last-child {
+    opacity: 0.3;
+}
+
+.theme-checkbox:not(:checked) + .theme-label .theme-name:first-child,
+.theme-checkbox:checked + .theme-label .theme-name:last-child {
+    opacity: 1;
+    text-shadow: 0 0 5px var(--accent-red);
+}
+
+.theme-label:hover {
+    padding-left: 12px;
+}
+
+/* Animation de transition */
+.theme-label .theme-name {
+    position: relative;
+}
+
+.theme-label .theme-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-red);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.theme-label:hover .theme-name::after {
+    transform: scaleX(1);
+}
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     list-style: none;
 
+}
+.lnk{
+    text-decoration: none;
 }

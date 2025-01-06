@@ -148,3 +148,37 @@ class ProjectSlider {
 document.addEventListener('DOMContentLoaded', () => {
     new ProjectSlider();
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('themeToggle');
+
+    // Fonction pour changer le thème
+    function setTheme(themeName) {
+        if (themeName === 'cyber') {
+            document.documentElement.setAttribute('data-theme', 'cyber');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        localStorage.setItem('theme', themeName);
+    }
+
+    // Écouteur d'événement pour le changement de thème
+    themeToggle.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            setTheme('cyber');
+        } else {
+            setTheme('samurai');
+        }
+    });
+
+    // Restaurer le thème précédent au chargement
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        if (savedTheme === 'cyber') {
+            themeToggle.checked = true;
+            setTheme('cyber');
+        } else {
+            themeToggle.checked = false;
+            setTheme('samurai');
+        }
+    }
+});

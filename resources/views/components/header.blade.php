@@ -11,7 +11,8 @@
         <nav class="nav-menu">
             <ul>
                 <li><a href="{{ route('home') }}">Accueil</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#portfolio">Réalisations</a></li>
+                <li><a href="#pricing">Prestations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -23,7 +24,8 @@
         <nav class="nav-menu-lg">
             <ul class="nav-menu-lg-itm">
                 <li><a class="nav-menu-lg-lnk" href="{{ route('home') }}">Accueil</a></li>
-                <li><a class="nav-menu-lg-lnk" href="#portfolio">Portfolio</a></li>
+                <li><a class="nav-menu-lg-lnk" href="#portfolio">Réalisations</a></li>
+                <li><a class="nav-menu-lg-lnk" href="#pricing">Prestations</a></li>
                 <li><a class="nav-menu-lg-lnk" href="#contact">Contact</a></li>
             </ul>
         </nav>

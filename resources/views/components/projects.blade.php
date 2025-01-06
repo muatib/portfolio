@@ -1,54 +1,43 @@
 <section class="projects-container ">
     <div class="slider">
         <div class="project-card">
-            <img src="{{ asset('img/shuriken.png') }}" alt="Project 1">
+            <img  src="{{ asset('img/bg.jpg') }}" alt="Montagne">
             <div class="card-content">
-                <h3 class="project-card-ttl">Project 1</h3>
-                <p class="project-card-txt">Dans l'obscurité du web comme dans l'art du sabre...</p>
+                <h3 class="project-card-ttl">Mountain</h3>
+                <p class="project-card-txt">Site vitrine sur le thème de la randonnée en montagne</p>
                 <div class="tech-stack">
                     <img src="{{ asset('img/laravel.png') }}" alt="Laravel">
                     <img src="{{ asset('img/SCSS.png') }}" alt="SCSS">
                 </div>
-                <button class="pres-btn">Voir le projet</button>
+                <a href="https://mountain.dubois-vincent.com/" target="_blank"><button class="pres-btn">Voir le projet</button></a>
             </div>
         </div>
 
-        <div class="project-card">
-            <img src="{{ asset('img/shuriken.png') }}" alt="Project 2">
-            <div class="card-content">
-                <h3 class="project-card-ttl">Project 2</h3>
-                <p class="project-card-txt">Tel un katana aiguisé, ce projet tranche...</p>
-                <div class="tech-stack">
-                    <img src="{{ asset('img/php.png') }}" alt="PHP">
-                    <img src="{{ asset('img/wordpress.png') }}" alt="WordPress">
-                </div>
-                <button class="pres-btn">Voir le projet</button>
-            </div>
-        </div>
+
 
         <div class="project-card">
-            <img src="{{ asset('img/shuriken.png') }}" alt="Project 3">
+            <img  src="{{ asset('img/resto.png') }}" alt="the resto">
             <div class="card-content">
-                <h3 class="project-card-ttl">Project 3</h3>
-                <p class="project-card-txt">La voie du code exige patience et détermination...</p>
+                <h3 class="project-card-ttl">The resto</h3>
+                <p class="project-card-txt">Site vitrine sur le thème de la restauration</p>
                 <div class="tech-stack">
                     <img src="{{ asset('img/php.png') }}" alt="React">
                     <img src="{{ asset('img/SCSS.png') }}" alt="Node">
                 </div>
-                <button class="pres-btn">Voir le projet</button>
+                <a href="https://resto.dubois-vincent.com/" target="_blank"><button class="pres-btn">Voir le projet</button></a>
             </div>
         </div>
 
         <div class="project-card">
-            <img src="{{ asset('img/shuriken.png') }}" alt="Project 3">
+            <img src="{{ asset('img/map.jpg') }}" alt="planéte terre">
             <div class="card-content">
-                <h3 class="project-card-ttl">Project 4</h3>
-                <p class="project-card-txt">La voie du code exige patience et détermination...</p>
+                <h3 class="project-card-ttl">Country app</h3>
+                <p class="project-card-txt">Application web permettant la recherche d'informations sur un pays</p>
                 <div class="tech-stack">
                     <img src="{{ asset('img/php.png') }}" alt="React">
                     <img src="{{ asset('img/SCSS.png') }}" alt="Node">
                 </div>
-                <button class="pres-btn">Voir le projet</button>
+                <a href="https://countryapp.dubois-vincent.com/" target="_blank"><button class="pres-btn">Voir le projet</button></a>
             </div>
         </div>
     </div>

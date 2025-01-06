@@ -7,7 +7,15 @@
         <img src="{{ asset('img/background2.jpg') }}" alt="background" class="background-image">
         <div class="gradient-overlay"></div>
     </div>
-
+    <div class="theme-switcher">
+        <input type="checkbox" id="themeToggle" class="theme-checkbox">
+        <label for="themeToggle" class="theme-label">
+            <span class="theme-icon">🎨</span>
+            <span class="theme-name">SAMOURAÏ</span>
+            <span class="theme-name">CYBER</span>
+            <span class="theme-arrow">⇄</span>
+        </label>
+    </div>
     <div class="logo-container">
         <img class="logo" src="{{ asset('img/logo.png') }}" alt="logo">
     </div>
@@ -24,7 +32,7 @@
                 expériences web exceptionnelles.</p>
             <p>Découvrez mon arsenal de compétences et les territoires conquis dans ce portfolio.</p>
             <div class="pres-contact">
-                <button class="pres-btn" onclick="window.location='{{ route('contact') }}'">Contact</button>
+                <a class="lnk" href="#contact" ><button class="pres-btn">Me contacter</button></a>
                 <img class="pres-img" src="{{ asset('img/samurai_deco.png') }}" alt="">
             </div>
         </div>
@@ -44,6 +52,16 @@
         @include('components.projects')
 
     </section>
+
+    <img src="{{ asset('img/sabre.png') }}" alt="katana decoration" class="sabre-decoration">
+
+
+    <section id="pricing" class="projects-section">
+        <h2 class="pres-ttl" id="projectsTitle">Prestations</h2>
+        @include('components.pricing')
+
+    </section>
+
 
     <img src="{{ asset('img/sabre.png') }}" alt="katana decoration" class="sabre-decoration">
 
