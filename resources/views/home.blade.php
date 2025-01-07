@@ -3,18 +3,20 @@
 @section('title', 'Accueil')
 
 @section('content')
-    <div class="background-container">
-        <img src="{{ asset('img/background2.jpg') }}" alt="background" class="background-image">
-        <div class="gradient-overlay"></div>
-    </div>
+<div class="background-container">
+    <img id="theme-background" src="{{ asset('img/background.jpg') }}" alt="background" class="background-image">
+    <div class="gradient-overlay"></div>
+</div>
     <div class="theme-switcher">
-        <input type="checkbox" id="themeToggle" class="theme-checkbox">
-        <label for="themeToggle" class="theme-label">
+        <div class="theme-label">
             <span class="theme-icon">🎨</span>
-            <span class="theme-name">SAMOURAÏ</span>
-            <span class="theme-name">CYBER</span>
+            <div class="theme-options">
+                <span class="theme-name active" data-theme="samurai">SAMOURAÏ</span>
+                <span class="theme-name" data-theme="cyber">CYBER</span>
+                <span class="theme-name" data-theme="minimal">MINIMAL</span>
+            </div>
             <span class="theme-arrow">⇄</span>
-        </label>
+        </div>
     </div>
     <div class="logo-container">
         <img class="logo" src="{{ asset('img/logo.png') }}" alt="logo">

@@ -125,7 +125,7 @@
 
     <!-- Scripts -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/index.js', 'resources/js/projects.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/js/index.js', 'resources/js/projects.js', 'resources/js/theme.js'])
 </head>
 
 <body>

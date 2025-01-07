@@ -1,9 +1,9 @@
 <header>
 
     <div class="header-container">
-<a class="nav-menu-lg-lnk" href="{{ route('home') }}">
-        <img src="{{ asset('img/initiales.png') }}" alt="init" class="init">
-    </a>
+        <a class="nav-menu-lg-lnk" href="{{ route('home') }}">
+            <img id="theme-logo-mobile" src="{{ asset('img/initiales.png') }}" alt="init" class="init">
+        </a>
         <div class="menu-burger">
             <img src="{{ asset('img/burger_japon.png') }}" alt="Temple" class="temple">
             <img src="{{ asset('img/katana-burger.png') }}" alt="Swords" class="swords">
@@ -18,8 +18,8 @@
         </nav>
     </div>
     <div class="header-container-lg">
-        <a  href="{{ route('home') }}">
-            <img src="{{ asset('img/initiales.png') }}" alt="init" class="init">
+        <a href="{{ route('home') }}">
+            <img id="theme-logo-desktop" src="{{ asset('img/initiales.png') }}" alt="init" class="init">
         </a>
         <nav class="nav-menu-lg">
             <ul class="nav-menu-lg-itm">

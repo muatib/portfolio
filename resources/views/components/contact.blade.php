@@ -1,10 +1,10 @@
 
 
 
-    <div class="background-container">
+    {{-- <div class="background-container">
         <img src="{{ asset('img/background.jpg') }}" alt="background" class="background-image">
         <div class="gradient-overlay"></div>
-    </div>
+    </div> --}}
 
     <h2 class="contact-ttl">Contact</h2>
 
